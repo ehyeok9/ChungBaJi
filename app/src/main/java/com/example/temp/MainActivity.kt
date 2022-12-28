@@ -2,10 +2,46 @@ package com.example.temp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.temp.databinding.ActivityBaseChoiceBinding
+import com.example.temp.databinding.ActivityMainBinding
+import com.example.temp.temp.Temp2Fragment
+import com.example.temp.temp.Temp3Fragment
+import com.example.temp.temp.TempFragment
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater);
+        setContentView(binding.root)
+
+
+        supportFragmentManager.beginTransaction().replace(R.id.main_frm, TempFragment()).commitAllowingStateLoss()
+
+        binding.mainBtmNav.run {
+            setOnItemSelectedListener { item ->
+                when (item.itemId) {
+                    R.id.menu_main_btm_nav_home -> {
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_frm, TempFragment())
+                            .commitAllowingStateLoss()
+                    }
+                    R.id.menu_main_btm_nav_recommend -> {
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_frm, Temp2Fragment())
+                            .commitAllowingStateLoss()
+                    }
+                    R.id.menu_main_btm_nav_my_history -> {
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_frm, Temp3Fragment())
+                            .commitAllowingStateLoss()
+                    }
+                }
+                true
+            }
+            selectedItemId = R.id.menu_main_btm_nav_home
+        }
     }
 }
