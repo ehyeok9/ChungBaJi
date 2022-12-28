@@ -11,13 +11,15 @@
         android:layout_height="match_parent"
         tools:ignore="MissingConstraints">
 
+
         <ImageView
+            android:background="@drawable/image_rounding"
             android:layout_gravity="center"
             android:id="@+id/imageView_pic"
             android:src="@drawable/france"
             android:scaleType="fitXY"
             android:layout_width="250dp"
-            android:layout_height="300dp"
+            android:layout_height="350dp"
             tools:ignore="MissingConstraints" />
 
         <TextView
