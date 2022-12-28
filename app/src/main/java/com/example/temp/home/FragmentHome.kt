@@ -1,5 +1,6 @@
 package com.example.temp.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -15,6 +16,7 @@ import com.example.temp.history.TravelHistoryRetrofitClient
 import com.example.temp.history.models.TravelHistoryResponse
 import com.example.temp.history.recycler.HistoryAdapter
 import com.example.temp.history.recycler.HistoryData
+import com.example.temp.tour_add.base_choice.BaseChoiceActivity
 import kotlinx.android.synthetic.main.item_recom_card.*
 import org.json.JSONArray
 import retrofit2.Call
@@ -81,76 +83,13 @@ class FragmentHome : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        showAllList()
-//
-//        binding.myHomeList.setHasFixedSize(true)
-//
-//        var manager = LinearLayoutManager(requireContext())
-//        binding.myHomeList.layoutManager = manager
-//
-//        var chAdapter = MyTourListAdapter(requireContext(),myTourListArray)
-//        binding.myHomeList.adapter = chAdapter
+        binding.addTourBtn.setOnClickListener{
+            val intent = Intent(context, BaseChoiceActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
-//    private fun showAllList() {
-//        val url = "http://plantity.shop/cokothon/list"
-//        val sr = StringRequest(
-//            Request.Method.GET, url,
-//            { response: String? ->
-//                myTourListArray =
-//                    ArrayList<MyTourListModel>()
-//
-//                try {
-//
-//                    val jsonArray = JSONArray(response)
-//
-//                    for (i in 0 until jsonArray.length()) {
-//                        val jsonObject = jsonArray.getJSONObject(i)
-//                        val country = jsonObject.getString("country")
-//                        val start = jsonObject.getString("startDate")
-//                        val end = jsonObject.getString("endDate")
-//
-//                        var today = Calendar.getInstance()
-//                        Log.i("test","오늘의 날짜 : ${today}")
-//                        Log.i("test","나라 : ${country}")
-//
-//                        myTourListArray.add(
-//                            MyTourListModel(
-//                                    country, start,end
-//                                )
-//                            )
-//                    }
-//                    var newAdapter = MyTourListAdapter(requireContext(),myTourListArray)
-//                    binding.myHomeList.adapter = newAdapter
-//
-//
-//
-//                } catch (e: Exception) {
-//                    Log.e("SearchListJSON", response!!)
-//                }
-//                var newAdapter = MyTourListAdapter(requireContext(),myTourListArray)
-//                binding.myHomeList.adapter = newAdapter
-//
-//                Log.i("imageAdd","이미지addlist확인: ${myTourListArray}")
-//
-//
-//
-//            }
-//        ) { error: VolleyError ->
-//            Log.e(
-//                "myList",
-//                "ee"
-//            )
-//        }
-//        sr.setShouldCache(false)
-//        queue = Volley.newRequestQueue(requireContext())
-//        queue!!.add(sr)
-//    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 
     private fun getTravelHistoryData(){
         val travelHistoryInterface = TravelHistoryRetrofitClient.sRetrofit.create(
@@ -198,6 +137,11 @@ class FragmentHome : Fragment() {
             }
 
         })
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 
