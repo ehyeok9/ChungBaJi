@@ -23,7 +23,10 @@ class HistoryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_history, container, false)
+        binding = FragmentHistoryBinding.inflate(layoutInflater)
+
+        recyclerViewHistory()
+        return binding.root
     }
 
 
