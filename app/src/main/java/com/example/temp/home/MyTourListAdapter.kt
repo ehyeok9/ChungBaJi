@@ -32,9 +32,11 @@ class MyTourListAdapter(val context: FragmentActivity?): RecyclerView.Adapter<Re
         holder.binding.root.setOnClickListener{
             Log.i("click","${holder.binding.country.text.toString()}")
             val intent = Intent(holder.binding.root?.context, TodoActivity::class.java)
+
             intent.putExtra("clickMyList","${holder.binding.country.text.toString()} ")
             intent.putExtra("startDate",myTourListArray[holder.adapterPosition].sDate)
             intent.putExtra("endDate",myTourListArray[holder.adapterPosition].eDate)
+
             ContextCompat.startActivity(holder.binding.root.context, intent,null)
         }
 
@@ -44,6 +46,7 @@ class MyTourListAdapter(val context: FragmentActivity?): RecyclerView.Adapter<Re
         fun bind(item: MyTourListModel){
             binding.country.text = item.country
             binding.date.text = item.sDate + "~" + item.eDate
+            binding.dday.text = "D-"+item.dDay
         }
     }
 }

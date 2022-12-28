@@ -22,6 +22,7 @@ import org.json.JSONArray
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -54,14 +55,7 @@ class FragmentHome : Fragment() {
         binding.viewFlipper.flipInterval = 3000  //화면 넘김 간격 메서드 (millisceond)
         binding.viewFlipper.startFlipping()
 
-//        val myTourListArray = arrayListOf<MyTourListModel>(
-////            MyTourListModel("프랑스","2023.04.21~2023.05.14"),
-////            MyTourListModel("일본","2023.01.21~2023.01.30"),
-////            MyTourListModel("베트남","2023.03.11~2023.03.22"),
-////            MyTourListModel("미국","2023.01.11~2023.01.14"),
-//
-//        )
-        getTravelHistoryData()
+//        getTravelHistoryData()
 
         if(myTourListArray.isNullOrEmpty()){
             //비어있다면
@@ -73,10 +67,6 @@ class FragmentHome : Fragment() {
             binding.myHomeList.visibility = View.VISIBLE
         }
 
-//        binding.myHomeList.layoutManager = LinearLayoutManager(requireContext())
-//        binding.myHomeList.adapter = MyTourListAdapter(requireContext(),myTourListArray)
-        var today = Calendar.getInstance()
-        Log.i("test","오늘의 날짜 : ${today}")
         return binding.root
     }
 
@@ -105,17 +95,36 @@ class FragmentHome : Fragment() {
 
                     myTourListAdapter = MyTourListAdapter(requireActivity())
                     binding.myHomeList.adapter = myTourListAdapter
+                    val dateFormat = SimpleDateFormat("yyyy.MM.dd")
+
+                    var today = Calendar.getInstance().apply {
+                        set(Calendar.HOUR_OF_DAY, 0)
+                        set(Calendar.MINUTE, 0)
+                        set(Calendar.SECOND, 0)
+                        set(Calendar.MILLISECOND, 0) }.time.time
+
+                    Log.i("today","오늘날짜:${today}")
+
+
+
 
                     for(i in result.result.indices){
-                        myTourListArray.apply { add(MyTourListModel(
-                            country = result.result[i].country,
-                            sDate = result.result[i].startDate,
-                            eDate = result.result[i].endDate)
-                        ) }
+                        val startDate = dateFormat.parse(result.result[i].startDate).time
+                        val dDay = (startDate - today) / (24 * 60 * 60 * 1000)
+                        if (dDay>=0){
+                            myTourListArray.apply { add(MyTourListModel(
+                                country = result.result[i].country,
+                                sDate = result.result[i].startDate,
+                                eDate = result.result[i].endDate,
+                                dDay = dDay.toString())
+                            ) }
+                        }
+
                     }
 
                     myTourListAdapter.myTourListArray = myTourListArray
                     myTourListAdapter.notifyDataSetChanged()
+
                     if(myTourListArray.isNullOrEmpty()){
                         //비어있다면
                         binding.notMyHomeList.visibility = View.VISIBLE

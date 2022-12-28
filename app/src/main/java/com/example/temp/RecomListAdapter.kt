@@ -5,13 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.temp.databinding.ItemRecomCardBinding
 
 class RecomListAdapter (private val data: ArrayList<checkboxData>) : RecyclerView.Adapter<RecomListAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recom_card,parent,false)
-        return ViewHolder(view)
+        val binding = ItemRecomCardBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        return ViewHolder(binding)
     }
 
     override fun getItemCount(): Int = data.size
@@ -20,18 +22,20 @@ class RecomListAdapter (private val data: ArrayList<checkboxData>) : RecyclerVie
         holder.bind(data[position])
     }
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private val country : CheckBox = itemView.findViewById(R.id.country)
+    inner class ViewHolder(val binding: ItemRecomCardBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: checkboxData) {
-            country.text = item.title
+            binding.spot.text = item.title
+            binding.comment.text = item.comment
 
+            // 이미지 url 읽어서 넣기
+            Glide.with(itemView).load(item.img).into(binding.imageView)
         }
     }
 
 
 }
 data class checkboxData(
+    val img : String,
     val title : String,
-    val check : Boolean
+    val comment : String,
 )
-

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/Item"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+
+
+        <ImageView
+            android:background="@drawable/image_rounding"
+            android:layout_gravity="center"
+            android:id="@+id/imageView_pic"
+            android:src="@drawable/france"
+            android:scaleType="fitXY"
+            android:layout_width="250dp"
+            android:layout_height="350dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:paddingLeft="5dp"
+            android:background="#80000000"
+            android:id="@+id/detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/imageView_pic"
+            android:layout_alignRight="@id/imageView_pic"
+            android:layout_above="@+id/country"
+            android:gravity="bottom"
+            android:textSize="28dp"
+            android:textColor="@color/white"
+            android:text="낭만이 가득한 도시"/>
+
+        <TextView
+            android:paddingLeft="5dp"
+            android:id="@+id/country"
+            android:background="#80000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/imageView_pic"
+            android:layout_alignRight="@id/imageView_pic"
+            android:layout_alignBottom="@id/imageView_pic"
+            android:gravity="bottom"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="프랑스"/>
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
