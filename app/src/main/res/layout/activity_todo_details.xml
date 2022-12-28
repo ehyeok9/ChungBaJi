@@ -8,7 +8,6 @@
         android:id="@+id/todo_details_tv_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:scrollbars="vertical"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="16dp"
         app:layout_constraintTop_toTopOf="parent"
