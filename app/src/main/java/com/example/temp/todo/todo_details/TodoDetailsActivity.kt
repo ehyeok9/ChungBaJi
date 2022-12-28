@@ -2,8 +2,10 @@ package com.example.temp.todo.todo_details
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import androidx.appcompat.app.AppCompatActivity
 import com.example.temp.databinding.ActivityTodoDetailsBinding
+
 
 class TodoDetailsActivity: AppCompatActivity() {
     lateinit var binding: ActivityTodoDetailsBinding
@@ -21,6 +23,7 @@ class TodoDetailsActivity: AppCompatActivity() {
         }
 
         binding.todoDetailsTvContent.text=content
+        binding.todoDetailsTvContent.movementMethod = ScrollingMovementMethod()
 
     }
 }
