@@ -3,6 +3,7 @@ package com.example.temp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.temp.Recommend.RecommendFragment
 import com.example.temp.databinding.ActivityMainBinding
 
 import com.example.temp.home.FragmentHome
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     R.id.menu_main_btm_nav_recommend -> {
                         supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_frm, Temp2Fragment())
+                            .replace(R.id.main_frm, RecommendFragment())
                             .commitAllowingStateLoss()
                     }
                     R.id.menu_main_btm_nav_my_history -> {
