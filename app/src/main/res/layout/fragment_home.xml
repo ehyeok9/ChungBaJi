@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentHome">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".home.FragmentHome">
 
 
     <LinearLayout
@@ -66,19 +67,38 @@
             android:textStyle="bold"
             android:textColor="@color/white"/>
 
-        <ScrollView
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            <LinearLayout
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/myHomeList"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-        </ScrollView>
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:orientation="vertical"-->
+<!--                android:background="@color/white">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textView3"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+
+<!--                    android:gravity="center"-->
+<!--                    android:text="아직 준비 중인 여행이 없어요\n저희가 추천해드릴게요!"-->
+<!--                    android:textSize="18dp"-->
+<!--                    android:textColor="@color/black"/>-->
+<!--            </LinearLayout>-->
+
+        </FrameLayout>
+
     </LinearLayout>
 </FrameLayout>

@@ -2,8 +2,8 @@ package com.example.temp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.temp.databinding.ActivityBaseChoiceBinding
 import com.example.temp.databinding.ActivityMainBinding
+import com.example.temp.home.FragmentHome
 import com.example.temp.temp.Temp2Fragment
 import com.example.temp.temp.Temp3Fragment
 import com.example.temp.temp.TempFragment
