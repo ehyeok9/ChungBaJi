@@ -1,8 +1,10 @@
 package com.example.temp.todo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.temp.R
 import com.example.temp.databinding.ActivityTodoBinding
@@ -18,17 +20,43 @@ class TodoActivity : AppCompatActivity(),TodoActivityInterface {
     lateinit var todoPackFragment: TodoPackFragment
 
     lateinit var binding: ActivityTodoBinding
+
+    private var receiveIntent: Intent?=null
+    private var country:String="일본"
+    private var startDate:String="2022.12.29"
+    private var endDate:String="2022.12.30"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_todo)
         binding = ActivityTodoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         todoDocFragment=TodoDocFragment()
         todoPackFragment=TodoPackFragment()
 
         supportFragmentManager.beginTransaction().add(R.id.frameLayout,todoPackFragment).commit()
         supportFragmentManager.beginTransaction().add(R.id.frameLayout,todoDocFragment).commit()
 
+
+
+        receiveIntent=intent
+        if(receiveIntent!=null){
+            if(!receiveIntent?.getStringExtra("clickMyList").isNullOrEmpty()){
+                country=receiveIntent?.getStringExtra("clickMyList").toString()
+                binding.country.text=country
+            }
+
+            if(!receiveIntent?.getStringExtra("startDate").isNullOrEmpty()){
+                startDate=receiveIntent?.getStringExtra("startDate").toString()
+            }
+
+            if(!receiveIntent?.getStringExtra("endDate").isNullOrEmpty()){
+                endDate=receiveIntent?.getStringExtra("endDate").toString()
+            }
+
+        }
         replaceView(todoDocFragment)
+
+        binding.date.text="${startDate}~${endDate}"
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -58,16 +86,22 @@ class TodoActivity : AppCompatActivity(),TodoActivityInterface {
     }
     //화면변경
     private fun replaceView(tab:Fragment){
+        var bundle = Bundle()
+        bundle.putString("country",country)
 
         if(tab is TodoDocFragment){
+
             supportFragmentManager.beginTransaction().hide(todoPackFragment!!).commit()
             supportFragmentManager.beginTransaction().show(todoDocFragment!!).commit()
+
+            todoDocFragment.arguments = bundle //fragment의 arguments에 데이터를 담은 bundle을 넘겨줌
         }
 
         if(tab is TodoPackFragment){
             supportFragmentManager.beginTransaction().hide(todoDocFragment!!).commit()
             supportFragmentManager.beginTransaction().show(todoPackFragment!!).commit()
 
+            todoPackFragment.arguments = bundle //fragment의 arguments에 데이터를 담은 bundle을 넘겨줌
         }
 
 //        tab.let{

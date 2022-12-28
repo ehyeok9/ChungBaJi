@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.temp.databinding.FragmentTodoDocBinding
 import com.example.temp.todo.models.passport.response.CountryPassPortResponse
 import com.example.temp.todo.models.response.ContryEntryInfoResponse
@@ -15,11 +16,12 @@ import com.example.temp.todo.todo_doc_network.TodoDocFragmentInterface
 import com.example.temp.todo.todo_doc_network.TodoDocService
 
 class TodoDocFragment : Fragment(),TodoDocFragmentInterface {
-    private val TAG="TodoDocFragmentTAG"
+    private val TAG="ç"
     lateinit var todoAdapter: TodoAdapter
 
     private var covidContent:String="null"
     private var passportContent:String="null"
+    private var country:String="일본"
     private lateinit var binding : FragmentTodoDocBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,13 +40,17 @@ class TodoDocFragment : Fragment(),TodoDocFragmentInterface {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        if(!arguments?.getString("country").isNullOrEmpty()){
+            country=arguments?.getString("country").toString()
+            Log.d("weagwegweaga",country)
+        }
 
 
         TodoDocService(this@TodoDocFragment).tryGetContryEntryInfo("ZHjMzIWX5bq/z7LHhg8Aa9pQ+zTXdLoU71TjpZl6pcECtIPV9hPEu2xQTbcBHWeTxff7YpY72QPyISTtW7m51w==",
-            1,10,"JSON","일본")
+            1,10,"JSON",country)
 
         TodoDocService(this@TodoDocFragment).tryGetCountryPassPort("ZHjMzIWX5bq/z7LHhg8Aa9pQ+zTXdLoU71TjpZl6pcECtIPV9hPEu2xQTbcBHWeTxff7YpY72QPyISTtW7m51w==",
-        1,10,"일본")
+        1,10,country)
 
         setListener()
 
@@ -82,7 +88,9 @@ class TodoDocFragment : Fragment(),TodoDocFragmentInterface {
     }
 
     override fun onContryEntryInfoSuccess(response: ContryEntryInfoResponse) {
-        covidContent=response.data[0].txt_origin_cn
+        if(response.data.size>0){
+            covidContent=response.data[0].txt_origin_cn
+        }
 //        Log.d(TAG,response.toString())
     }
 
