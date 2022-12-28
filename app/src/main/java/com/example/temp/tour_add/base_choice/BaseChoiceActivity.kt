@@ -29,9 +29,7 @@ class BaseChoiceActivity:AppCompatActivity() {
         }
 
         binding.baseChoiceTvDomestic.setOnClickListener {
-            var intent= Intent(this@BaseChoiceActivity,CountryChoiceActivity::class.java)
-            startActivity(intent)
-
+            Toast.makeText(this@BaseChoiceActivity,"국내여행은 준비중입니다!",Toast.LENGTH_SHORT).show()
         }
 
 
