@@ -36,7 +36,7 @@ class HistoryAdapter(val context: FragmentActivity?): RecyclerView.Adapter<ViewH
 
         fun bind(item: HistoryData){
             name.text = item.name
-            date.text = item.date
+            date.text = item.startDate + "~" + item.endDate
 
             card.clipToOutline = true
         }
