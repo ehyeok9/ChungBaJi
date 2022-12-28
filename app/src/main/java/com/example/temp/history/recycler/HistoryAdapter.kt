@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -31,10 +32,13 @@ class HistoryAdapter(val context: FragmentActivity?): RecyclerView.Adapter<ViewH
         private val img : ImageView = binding.imgHistory
         private val name: TextView = binding.txtCountryName
         private val date: TextView = binding.txtCountryDate
+        private val card: CardView = binding.cardviewHistory
 
         fun bind(item: HistoryData){
             name.text = item.name
             date.text = item.date
+
+            card.clipToOutline = true
         }
 
     }

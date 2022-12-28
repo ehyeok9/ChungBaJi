@@ -6,20 +6,23 @@
     android:paddingBottom="10dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
+    android:clipToPadding="false"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="7dp"
         app:cardBackgroundColor="#F6F6F6"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/rec_radius_7">
-
+           >
+            
             <ImageView
                 android:id="@+id/img_history"
                 android:layout_width="60dp"
@@ -42,6 +45,7 @@
                 android:text="나라 이름"
                 android:textColor="@color/black"
                 android:textStyle="bold"
+                android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/img_history"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="25dp"

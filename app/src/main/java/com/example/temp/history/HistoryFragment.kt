@@ -35,7 +35,7 @@ class HistoryFragment : Fragment() {
         binding.recyclerHistory.adapter = historyAdapter
 
         for(i in 1 until 5){
-            historyDatas.apply { add(HistoryData(img = resources.getDrawable(R.drawable.tempimage), name = "프랑스", date = "20202020202")) }
+            historyDatas.apply { add(HistoryData(img = resources.getDrawable(R.drawable.tempimage), name = "프랑스", date = "2023.01.11~2023.01.22")) }
         }
 
         historyAdapter.historyDatas = historyDatas
