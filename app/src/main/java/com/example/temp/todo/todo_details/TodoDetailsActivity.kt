@@ -1,18 +1,9 @@
-package com.example.temp.todo.todo_detais
+package com.example.temp.todo.todo_details
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.temp.R
-import com.example.temp.databinding.ActivityTodoBinding
 import com.example.temp.databinding.ActivityTodoDetailsBinding
-import com.example.temp.todo.TodoAdapter
-import com.example.temp.todo.TodoDocFragment
-import com.example.temp.todo.TodoPackFragment
-import com.example.temp.todo.network.TodoService
-import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_todo.*
 
 class TodoDetailsActivity: AppCompatActivity() {
     lateinit var binding: ActivityTodoDetailsBinding

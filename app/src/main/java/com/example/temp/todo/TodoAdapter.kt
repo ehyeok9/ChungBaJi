@@ -1,19 +1,13 @@
 package com.example.temp.todo
 
-import android.content.Intent
 import android.graphics.Paint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.temp.R
-import com.example.temp.todo.todo_detais.TodoDetailsActivity
-import kotlinx.android.synthetic.main.activity_recom_list.view.*
 import kotlinx.android.synthetic.main.item_check_box.view.*
 
 class TodoAdapter(private val data: ArrayList<checkboxData>) : RecyclerView.Adapter<TodoAdapter.ViewHolder>() {

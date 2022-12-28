@@ -14,9 +14,12 @@ import com.example.temp.history.models.TravelHistoryResponse
 import com.example.temp.history.models.img.HistoryImageResponse
 import com.example.temp.history.recycler.HistoryAdapter
 import com.example.temp.history.recycler.HistoryData
+import kotlinx.android.synthetic.main.activity_todo.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalDate
+import java.time.LocalDateTime
 
 class HistoryFragment : Fragment() {
 
@@ -50,12 +53,18 @@ class HistoryFragment : Fragment() {
                     val result = response.body() as TravelHistoryResponse
 
                     for(i in result.result.indices){
+                        val dateAndtime: LocalDateTime = LocalDateTime.now()
 
-                        getHistoryImgData(result.result[i].country, "KakaoAK 8909308764caae2bfc804ee924446495")
+                        var dateAndTimeInt = dateAndtime.toString().substring(0 until 4).toInt() // 오늘 년도
+                        var startDateInt = result.result[i].startDate.substring(0 until 4).toInt()
 
-                        name = result.result[i].country
-                        startDate = result.result[i].startDate
-                        endDate = result.result[i].endDate
+
+                        if(!(dateAndTimeInt < startDateInt)){
+                            name = result.result[i].country
+                            startDate = result.result[i].startDate
+                            endDate = result.result[i].endDate
+                            getHistoryImgData(result.result[i].country, "KakaoAK 8909308764caae2bfc804ee924446495")
+                        }
 
                     }
 
@@ -81,8 +90,6 @@ class HistoryFragment : Fragment() {
                 if(response.isSuccessful){
                     val result = response.body() as HistoryImageResponse
                     imgUrl = result.documents[0].image_url
-                    Log.d("image", imgUrl.toString())
-
 
                     historyAdapter = HistoryAdapter(requireActivity())
                     binding.recyclerHistory.adapter = historyAdapter
