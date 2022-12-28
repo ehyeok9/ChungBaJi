@@ -7,10 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.temp.R
 import com.example.temp.databinding.FragmentHistoryBinding
+import com.example.temp.history.recycler.HistoryAdapter
+import com.example.temp.history.recycler.HistoryData
 
 class HistoryFragment : Fragment() {
 
    private lateinit var binding: FragmentHistoryBinding
+   lateinit var historyAdapter: HistoryAdapter
+   val historyDatas = mutableListOf<HistoryData>()
+
+    var testImg: Int = R.drawable.tempimage
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,5 +26,17 @@ class HistoryFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_history, container, false)
     }
 
+
+    fun recyclerViewHistory(){
+        historyAdapter = HistoryAdapter(requireActivity())
+        binding.recyclerHistory.adapter = historyAdapter
+
+        for(i in 1 until 5){
+            historyDatas.apply { add(HistoryData(img = resources.getDrawable(R.drawable.tempimage), name = "프랑스", date = "20202020202")) }
+        }
+
+        historyAdapter.historyDatas = historyDatas
+        historyAdapter.notifyDataSetChanged()
+    }
 
 }
