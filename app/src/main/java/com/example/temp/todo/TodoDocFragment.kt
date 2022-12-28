@@ -7,14 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import com.example.temp.R
 import com.example.temp.databinding.FragmentTodoDocBinding
-import com.example.temp.databinding.FragmentTodoPackBinding
 import com.example.temp.todo.models.passport.response.CountryPassPortResponse
 import com.example.temp.todo.models.response.ContryEntryInfoResponse
-import com.example.temp.todo.network.TodoService
-import com.example.temp.todo.todo_detais.TodoDetailsActivity
+import com.example.temp.todo.todo_details.TodoDetailsActivity
 import com.example.temp.todo.todo_doc_network.TodoDocFragmentInterface
 import com.example.temp.todo.todo_doc_network.TodoDocService
 
