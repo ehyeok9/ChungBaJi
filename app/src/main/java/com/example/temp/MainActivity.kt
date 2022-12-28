@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.temp.databinding.ActivityMainBinding
+
+import com.example.temp.home.FragmentHome
+
 import com.example.temp.history.HistoryFragment
+
 import com.example.temp.temp.Temp2Fragment
 import com.example.temp.temp.TempFragment
 import com.kakao.sdk.common.util.Utility
@@ -29,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 when (item.itemId) {
                     R.id.menu_main_btm_nav_home -> {
                         supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_frm, TempFragment())
+                            .replace(R.id.main_frm, FragmentHome())
                             .commitAllowingStateLoss()
                     }
                     R.id.menu_main_btm_nav_recommend -> {
