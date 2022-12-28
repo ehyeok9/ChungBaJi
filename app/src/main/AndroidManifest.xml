@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +17,7 @@
         android:theme="@style/Theme.Temp"
         tools:targetApi="31" >
         <activity
-            android:name=".tour_add.base_choice.BaseChoiceActivity"
+            android:name=".todo.TodoActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,21 +29,22 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
-            android:name=".MainActivity"
-            android:exported="true" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".MainActivity"
+            android:name=".tour_add.base_choice.BaseChoiceActivity"
+
             />
         <activity
             android:name=".tour_add.country_choice.CountryChoiceActivity"
             />
         <activity
             android:name=".tour_add.date_choice.DateChoiceActivity"
+            />
+        <activity
+            android:name=".MainActivity"
+            />
+        <activity
+            android:name=".todo.todo_detais.TodoDetailsActivity"
             />
 
     </application>
