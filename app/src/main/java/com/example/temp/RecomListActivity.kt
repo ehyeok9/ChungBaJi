@@ -3,6 +3,7 @@ package com.example.temp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.SingleRequest
 import com.example.temp.databinding.ActivityRecomListBinding
@@ -24,7 +25,10 @@ class RecomListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val toolbar = binding.Toolbar
-
+        setSupportActionBar(toolbar)
+        val ab = supportActionBar!!
+        ab.setDisplayShowTitleEnabled(false)
+        ab.setDisplayHomeAsUpEnabled(true)
 
         // 텍스트 변경
         val country = intent.getStringExtra("country")
@@ -64,5 +68,16 @@ class RecomListActivity : AppCompatActivity() {
         }
 
         return itemList
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        when (id) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
