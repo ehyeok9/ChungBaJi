@@ -55,7 +55,7 @@ class FragmentHome : Fragment() {
         binding.viewFlipper.flipInterval = 3000  //화면 넘김 간격 메서드 (millisceond)
         binding.viewFlipper.startFlipping()
 
-//        getTravelHistoryData()
+        getTravelHistoryData()
 
         if(myTourListArray.isNullOrEmpty()){
             //비어있다면

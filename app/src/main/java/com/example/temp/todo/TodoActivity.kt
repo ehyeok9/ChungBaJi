@@ -25,6 +25,7 @@ class TodoActivity : AppCompatActivity(),TodoActivityInterface {
     private var country:String="일본"
     private var startDate:String="2022.12.29"
     private var endDate:String="2022.12.30"
+    private var remainDay:String="D-1"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTodoBinding.inflate(layoutInflater)
@@ -53,6 +54,11 @@ class TodoActivity : AppCompatActivity(),TodoActivityInterface {
                 endDate=receiveIntent?.getStringExtra("endDate").toString()
             }
 
+            if(!receiveIntent?.getStringExtra("remain").isNullOrEmpty()){
+                remainDay=receiveIntent?.getStringExtra("remain").toString()
+                binding.dday.text=remainDay
+            }
+
         }
         replaceView(todoDocFragment)
 
@@ -77,6 +83,10 @@ class TodoActivity : AppCompatActivity(),TodoActivityInterface {
             }
 
         })
+
+        binding.todoImgBack.setOnClickListener {
+            finish()
+        }
 
 
 

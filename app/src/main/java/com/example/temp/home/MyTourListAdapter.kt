@@ -36,6 +36,7 @@ class MyTourListAdapter(val context: FragmentActivity?): RecyclerView.Adapter<Re
             intent.putExtra("clickMyList","${holder.binding.country.text.toString()} ")
             intent.putExtra("startDate",myTourListArray[holder.adapterPosition].sDate)
             intent.putExtra("endDate",myTourListArray[holder.adapterPosition].eDate)
+            intent.putExtra("remain",holder.binding.dday.text.toString())
 
             ContextCompat.startActivity(holder.binding.root.context, intent,null)
         }
