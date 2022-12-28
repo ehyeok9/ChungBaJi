@@ -22,11 +22,6 @@
         tools:targetApi="31">
 
         <activity
-<<<<<<< HEAD
-=======
-
-
-
             android:name=".todo.TodoActivity"
             android:exported="false">
 
@@ -35,8 +30,6 @@
                 android:value="" />
         </activity>
         <activity
-
->>>>>>> master
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
             <intent-filter>
@@ -74,11 +67,7 @@
             />
 
         <activity
-<<<<<<< HEAD
-=======
-
->>>>>>> master
-            android:name=".todo.todo_detais.TodoDetailsActivity"
+            android:name=".todo.todo_details.TodoDetailsActivity"
             />
 
     </application>
