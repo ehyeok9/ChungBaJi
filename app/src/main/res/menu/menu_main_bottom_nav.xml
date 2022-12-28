@@ -6,17 +6,23 @@
         app:showAsAction="always"
         android:enabled="true"
         android:checkable="true"
+        android:icon="@drawable/ic_home"
+        android:iconTint="@color/white"
         android:title="홈" />
 
     <item
         android:id="@+id/menu_main_btm_nav_recommend"
         app:showAsAction="always"
         android:enabled="true"
+        android:icon="@drawable/ic_recommend"
+        android:iconTint="@color/white"
         android:title="여행 추천" />
 
     <item
         android:id="@+id/menu_main_btm_nav_my_history"
         app:showAsAction="always"
         android:enabled="true"
+        android:icon="@drawable/ic_history"
+        android:iconTint="@color/white"
         android:title="여행 기록" />
 </menu>

@@ -2,11 +2,12 @@ package com.example.temp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.temp.databinding.ActivityBaseChoiceBinding
+import android.util.Log
 import com.example.temp.databinding.ActivityMainBinding
+import com.example.temp.history.HistoryFragment
 import com.example.temp.temp.Temp2Fragment
-import com.example.temp.temp.Temp3Fragment
 import com.example.temp.temp.TempFragment
+import com.kakao.sdk.common.util.Utility
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater);
         setContentView(binding.root)
+
+        val keyHash = Utility.getKeyHash(this)//onCreate 안에 입력해주자
+        Log.d("Hash", keyHash)
 
 
         supportFragmentManager.beginTransaction().replace(R.id.main_frm, TempFragment()).commitAllowingStateLoss()
@@ -35,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     R.id.menu_main_btm_nav_my_history -> {
                         supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_frm, Temp3Fragment())
+                            .replace(R.id.main_frm, HistoryFragment())
                             .commitAllowingStateLoss()
                     }
                 }
