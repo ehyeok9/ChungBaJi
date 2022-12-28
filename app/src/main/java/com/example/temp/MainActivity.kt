@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 when (item.itemId) {
                     R.id.menu_main_btm_nav_home -> {
                         supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_frm, TempFragment())
+                            .replace(R.id.main_frm, FragmentHome())
                             .commitAllowingStateLoss()
                     }
                     R.id.menu_main_btm_nav_recommend -> {

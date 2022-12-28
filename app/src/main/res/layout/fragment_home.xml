@@ -26,23 +26,30 @@
             android:textStyle="bold" />
 
         <ViewFlipper
-            android:id="@+id/vf"
+            android:id="@+id/viewFlipper"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:layout_marginBottom="80dp"
             >
 
-            <ImageView
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scaleType="fitStart"
-                android:src="@drawable/home_text" />
-            <ImageView
-                android:layout_width="match_parent"
+                android:text="당신의 청춘은 언제인가요?\n이미 지나갔다고 생각하시나요?"
+                android:textColor="@color/black"
+                android:textSize="23dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scaleType="fitStart"
-                android:src="@drawable/home_text2" />
+                android:text="아직도 청춘인 우리!\n이번에는 어디로 떠나볼까요?"
+                android:textColor="@color/black"
+                android:textSize="23dp"
+                android:textStyle="bold"/>
+
 
     </ViewFlipper>
 
