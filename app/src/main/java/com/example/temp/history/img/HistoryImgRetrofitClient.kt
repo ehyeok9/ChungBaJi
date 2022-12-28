@@ -1,11 +1,11 @@
-package com.example.temp.history
+package com.example.temp.history.img
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object TravelHistoryRetrofitClient {
+object HistoryImgRetrofitClient {
     val sRetrofit = initRetrofit()
-    private const val BaseURL = "http://plantity.shop/cokothon/"
+    private const val BaseURL = "https://dapi.kakao.com/v2/search/"
 
     private fun initRetrofit() : Retrofit =
         Retrofit.Builder()
