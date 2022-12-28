@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".GlobalApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,6 +16,19 @@
         android:theme="@style/Theme.Temp"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao47b4bc782ad04b1567ee3c48cbf01016" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".tour_add.base_choice.BaseChoiceActivity"

@@ -8,6 +8,7 @@ import androidx.cardview.widget.CardView
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.bumptech.glide.Glide
 import com.example.temp.databinding.ItemHistoryRecyclerBinding
 
 class HistoryAdapter(val context: FragmentActivity?): RecyclerView.Adapter<ViewHolder>() {
@@ -38,7 +39,13 @@ class HistoryAdapter(val context: FragmentActivity?): RecyclerView.Adapter<ViewH
             name.text = item.name
             date.text = item.startDate + "~" + item.endDate
 
+            Glide.with(context!!)
+                .load(item.img)
+                .centerCrop()
+                .into(img)
+
             card.clipToOutline = true
+            img.clipToOutline = true
         }
 
     }
