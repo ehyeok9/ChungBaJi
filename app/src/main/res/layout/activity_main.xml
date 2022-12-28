@@ -19,6 +19,7 @@
         android:background="@color/mainColor"
         app:labelVisibilityMode="labeled"
         app:itemIconSize="30dp"
+        style="@style/BottomNavigationView"
         app:itemIconTint="@drawable/menu_selector_color"
         app:itemTextColor="@drawable/menu_selector_color"
         app:layout_constraintBottom_toBottomOf="parent"
