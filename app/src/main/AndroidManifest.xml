@@ -23,7 +23,7 @@
 
         <activity
 
-<<<<<<< HEAD
+
             android:name=".todo.TodoActivity"
             android:exported="false">
 
@@ -33,7 +33,7 @@
         </activity>
         <activity
             
-=======
+
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
 
             android:exported="true">
@@ -48,7 +48,7 @@
         </activity>
 
         <activity
->>>>>>> master
+
             android:name=".tour_add.base_choice.BaseChoiceActivity"
             android:exported="false">
 
@@ -72,9 +72,7 @@
         <activity
             android:name=".tour_add.date_choice.DateChoiceActivity"
             />
-        <activity
-            android:name=".MainActivity"
-            />
+
         <activity
             android:name=".todo.todo_detais.TodoDetailsActivity"
             />

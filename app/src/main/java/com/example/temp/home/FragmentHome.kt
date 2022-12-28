@@ -7,11 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.volley.Request
-import com.android.volley.RequestQueue
-import com.android.volley.VolleyError
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
+
 import com.example.temp.R
 import com.example.temp.databinding.FragmentHomeBinding
 import com.example.temp.history.TravelHistoryInterface
@@ -37,7 +33,7 @@ class FragmentHome : Fragment() {
     lateinit var myTourListAdapter: MyTourListAdapter
     val  myTourListArray = mutableListOf<MyTourListModel>()
 
-    var queue: RequestQueue?=null
+
 //    var myTourListArray: ArrayList<MyTourListModel> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
