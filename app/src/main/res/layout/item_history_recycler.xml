@@ -4,8 +4,8 @@
     android:layout_height="wrap_content"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
     android:clipToPadding="false"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
