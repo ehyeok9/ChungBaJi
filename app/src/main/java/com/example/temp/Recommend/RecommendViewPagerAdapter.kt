@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.temp.R
 
@@ -20,6 +21,7 @@ class RecommendViewPagerAdapter(picList: ArrayList<ViewPagerData>) :
         holder.pic.setImageResource(item[position].img)
         holder.country.setText(item[position].country)
         holder.detail.setText(item[position].detail)
+
     }
 
     inner class PagerViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder

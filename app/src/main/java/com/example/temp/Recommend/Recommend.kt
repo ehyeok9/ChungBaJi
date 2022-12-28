@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.temp.R
 import com.example.temp.databinding.RecommendBinding
+import com.example.temp.temp.Temp2Fragment
+import com.example.temp.temp.Temp3Fragment
+import com.example.temp.temp.TempFragment
 
 class Recommend : AppCompatActivity() {
     private lateinit var binding: RecommendBinding
@@ -36,6 +39,33 @@ class Recommend : AppCompatActivity() {
         viewPager_pic.setPageTransformer { page, position ->
             page.translationX = position * -offsetPx
         }
+
+        // 바텀 네비게이션 뷰
+//        supportFragmentManager.beginTransaction().replace(R.id.main_frm, TempFragment()).commitAllowingStateLoss()
+//
+//        binding.mainBtmNav.run {
+//            setOnItemSelectedListener { item ->
+//                when (item.itemId) {
+//                    R.id.menu_main_btm_nav_home -> {
+//                        supportFragmentManager.beginTransaction()
+//                            .replace(R.id.main_frm, TempFragment())
+//                            .commitAllowingStateLoss()
+//                    }
+//                    R.id.menu_main_btm_nav_recommend -> {
+//                        supportFragmentManager.beginTransaction()
+//                            .replace(R.id.main_frm, Temp2Fragment())
+//                            .commitAllowingStateLoss()
+//                    }
+//                    R.id.menu_main_btm_nav_my_history -> {
+//                        supportFragmentManager.beginTransaction()
+//                            .replace(R.id.main_frm, Temp3Fragment())
+//                            .commitAllowingStateLoss()
+//                    }
+//                }
+//                true
+//            }
+//            selectedItemId = R.id.menu_main_btm_nav_home
+//        }
 
     }
 

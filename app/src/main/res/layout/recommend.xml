@@ -63,6 +63,26 @@
         app:layout_constraintStart_toStartOf="@+id/Textlinear"
         app:layout_constraintTop_toBottomOf="@+id/Textlinear" />
 
+    <TextView
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/main_btm_nav"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="이미지를 선택하시면,\n더 자세한 관광 명소들을 추천해드릴게요!"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/main_btm_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemBackground="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_main_bottom_nav" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
