@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="50dp"
             >
 
             <TextView
@@ -46,25 +46,45 @@
                 android:text="당신의 청춘은 언제인가요?\n이미 지나갔다고 생각하시나요?"
                 android:textColor="@color/black"
                 android:textSize="23dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:lineSpacingExtra="5dp"/>
             <TextView
                 android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="여행의 설렘이 아직도 느껴진다면\n지금이 바로 여러분의 청춘!"
+                android:textColor="@color/black"
+                android:textSize="23dp"
+                android:textStyle="bold"
+                android:lineSpacingExtra="5dp"/>
+            <TextView
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="아직도 청춘인 우리!\n이번에는 어디로 떠나볼까요?"
                 android:textColor="@color/black"
                 android:textSize="23dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:lineSpacingExtra="5dp"/>
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="설레는 여행 준비,\n청바지와 함께 하세요:)"
+                android:textColor="@color/black"
+                android:textSize="23dp"
+                android:textStyle="bold"
+                android:lineSpacingExtra="5dp"/>
 
 
     </ViewFlipper>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/addTourBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             android:elevation="30dp"
             android:background="@drawable/home_add_btn"
             android:text="여행 추가하기"
@@ -76,13 +96,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/myHomeList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:layout_marginTop="20dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
             <LinearLayout
@@ -106,9 +125,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:text="아직 준비 중인 여행이 없어요\n저희가 추천해드릴게요!"
                     android:textSize="18dp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:lineSpacingExtra="3dp"/>
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/recommend_arrow" />
             </LinearLayout>
 
         </FrameLayout>

@@ -4,45 +4,68 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/logo"
+        android:label="청바지"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Temp"
         tools:targetApi="31">
         <activity
-            android:name=".Recommend.Recommend"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-
+            android:name=".todo.TodoActivity"
+            android:exported="false">
 
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao47b4bc782ad04b1567ee3c48cbf01016" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".tour_add.base_choice.BaseChoiceActivity"
-            android:screenOrientation="portrait"
-            />
-        <activity android:name=".RecomListActivity"/>
+            android:exported="false">
+
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+        </activity>
+        <activity android:name=".tour_add.country_choice.CountryChoiceActivity" />
+        <activity android:name=".tour_add.date_choice.DateChoiceActivity" />
+        <activity android:name=".todo.todo_details.TodoDetailsActivity" />
+
     </application>
 
 </manifest>
