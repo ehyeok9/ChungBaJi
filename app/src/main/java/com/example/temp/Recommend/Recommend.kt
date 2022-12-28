@@ -1,15 +1,12 @@
 package com.example.temp.Recommend
 
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.View
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.temp.R
 import com.example.temp.databinding.RecommendBinding
-import com.example.temp.temp.Temp2Fragment
-import com.example.temp.temp.Temp3Fragment
-import com.example.temp.temp.TempFragment
+
 
 class Recommend : AppCompatActivity() {
     private lateinit var binding: RecommendBinding
@@ -24,6 +21,10 @@ class Recommend : AppCompatActivity() {
 
         // 툴 바
         val toolbar = binding.RecommendToolbar
+        setSupportActionBar(toolbar)
+        val ab = supportActionBar!!
+        ab.setDisplayShowTitleEnabled(false)
+        ab.setDisplayHomeAsUpEnabled(true)
 
 
         // 뷰 페이저
@@ -40,40 +41,24 @@ class Recommend : AppCompatActivity() {
             page.translationX = position * -offsetPx
         }
 
-        // 바텀 네비게이션 뷰
-//        supportFragmentManager.beginTransaction().replace(R.id.main_frm, TempFragment()).commitAllowingStateLoss()
-//
-//        binding.mainBtmNav.run {
-//            setOnItemSelectedListener { item ->
-//                when (item.itemId) {
-//                    R.id.menu_main_btm_nav_home -> {
-//                        supportFragmentManager.beginTransaction()
-//                            .replace(R.id.main_frm, TempFragment())
-//                            .commitAllowingStateLoss()
-//                    }
-//                    R.id.menu_main_btm_nav_recommend -> {
-//                        supportFragmentManager.beginTransaction()
-//                            .replace(R.id.main_frm, Temp2Fragment())
-//                            .commitAllowingStateLoss()
-//                    }
-//                    R.id.menu_main_btm_nav_my_history -> {
-//                        supportFragmentManager.beginTransaction()
-//                            .replace(R.id.main_frm, Temp3Fragment())
-//                            .commitAllowingStateLoss()
-//                    }
-//                }
-//                true
-//            }
-//            selectedItemId = R.id.menu_main_btm_nav_home
-//        }
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        when (id) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun getPicList() : ArrayList<ViewPagerData> {
         val itemList = arrayListOf<ViewPagerData>(
             ViewPagerData(R.drawable.france, "프랑스", "낭만이 가득한 나라"),
-            ViewPagerData(R.drawable.america, "미국", "자유가 가득한 나라"),
-            ViewPagerData(R.drawable.japan, "일본", "예절이 가득한 나라"),
+            ViewPagerData(R.drawable.america, "미국", "가장 자유로운 나라"),
+            ViewPagerData(R.drawable.japan, "일본", "시대가 공존하는 나라"),
         )
         return itemList
     }

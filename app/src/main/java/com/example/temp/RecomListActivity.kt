@@ -23,14 +23,23 @@ class RecomListActivity : AppCompatActivity() {
         binding = ActivityRecomListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val toolbar = binding.Toolbar
+
+
         // 텍스트 변경
         val country = intent.getStringExtra("country")
         binding.textView2.text = country
-        Log.d("test", "생성")
 
-        val list = doTask("https://travel.naver.com/overseas/JP294232/country/topPlace/tspot")
+        var tag = "JP294232"
+        if (country == "프랑스"){
+            tag = "FR187070"
+        } else if (country == "일본"){
+            tag = "JP294232"
+        } else if (country == "미국"){
+            tag = "US191"
+        }
+        val list = doTask("https://travel.naver.com/overseas/" + tag + "/country/topPlace/tmap")
 
-//        Log.d("test", list.get(0).title)
         // 리사이클러뷰
         recomListAdapter= RecomListAdapter(list)
         binding.rvRecomList.adapter=recomListAdapter
@@ -39,19 +48,19 @@ class RecomListActivity : AppCompatActivity() {
 
     private fun doTask(url: String) : ArrayList<checkboxData> {
         var itemList : ArrayList<checkboxData> = arrayListOf()
-
         CoroutineScope(Dispatchers.IO).launch {
             val document = Jsoup.connect(url).get()
-            val elements : Elements = document.select("ul[class=topPlaceSpot_list__1l27A]").select("li")
-
+            val elements : Elements = document.select("ul.mapView_list__108hK li")
             elements.forEach { element ->
-                var img = element.select("figure[class=poiItem_thumb__1JJu8]").select("img").attr("src")
-                var spot = element.select("figure[class=poiItem_thumb__1JJu8]").select("img").attr("alt")
-                var detail = element.select("span[class=poiItem_desc__31sC4]").text()
+                Log.d("test", "생성 중")
+                var img = element.select("figure.topPlace_thumb__3Q3Hc img").attr("src")
+                var spot = element.select("b.topPlace_name__1arme").text()
+                var detail = element.select("span[class=topPlace_desc__rmZ30]").text()
 
                 var item = checkboxData(img, spot, detail)
                 itemList.add(item)
             }
+            Log.d("test", "생성완료")
         }
 
         return itemList
