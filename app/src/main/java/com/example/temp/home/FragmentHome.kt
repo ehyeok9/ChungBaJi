@@ -22,6 +22,7 @@ import org.json.JSONArray
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -105,17 +106,36 @@ class FragmentHome : Fragment() {
 
                     myTourListAdapter = MyTourListAdapter(requireActivity())
                     binding.myHomeList.adapter = myTourListAdapter
+                    val dateFormat = SimpleDateFormat("yyyy.MM.dd")
+
+                    var today = Calendar.getInstance().apply {
+                        set(Calendar.HOUR_OF_DAY, 0)
+                        set(Calendar.MINUTE, 0)
+                        set(Calendar.SECOND, 0)
+                        set(Calendar.MILLISECOND, 0) }.time.time
+
+                    Log.i("today","오늘날짜:${today}")
+
+
+
 
                     for(i in result.result.indices){
-                        myTourListArray.apply { add(MyTourListModel(
-                            country = result.result[i].country,
-                            sDate = result.result[i].startDate,
-                            eDate = result.result[i].endDate)
-                        ) }
+                        val startDate = dateFormat.parse(result.result[i].startDate).time
+                        val dDay = (startDate - today) / (24 * 60 * 60 * 1000)
+                        if (dDay>=0){
+                            myTourListArray.apply { add(MyTourListModel(
+                                country = result.result[i].country,
+                                sDate = result.result[i].startDate,
+                                eDate = result.result[i].endDate,
+                                dDay = dDay.toString())
+                            ) }
+                        }
+
                     }
 
                     myTourListAdapter.myTourListArray = myTourListArray
                     myTourListAdapter.notifyDataSetChanged()
+
                     if(myTourListArray.isNullOrEmpty()){
                         //비어있다면
                         binding.notMyHomeList.visibility = View.VISIBLE
