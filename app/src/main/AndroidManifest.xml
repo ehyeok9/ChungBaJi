@@ -25,6 +25,12 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+
+        <activity
+            android:name=".tour_add.base_choice.BaseChoiceActivity"
+            android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>

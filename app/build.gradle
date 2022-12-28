@@ -7,6 +7,10 @@ android {
     namespace 'com.example.temp'
     compileSdk 32
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId "com.example.temp"
         minSdk 31
