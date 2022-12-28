@@ -1,5 +1,28 @@
 <resources>
     <string name="app_name">Temp</string>
+
+
+    <!--activity_base_choice-->
+    <string name="base_choice_tv_title">어디로 여행가시나요?</string>
+    <string name="base_choice_tv_domestic">국내</string>
+    <string name="base_choice_tv_foreign">해외</string>
+
+    <!-- activity_country_choice -->
+    <string name="country_choice_tv_title">여행추가</string>
+    <string name="country_choice_tv_search_title">국가를 선택해주세요</string>
+    <string name="country_choice_tv_date_title">여행날짜를 선택해주세요</string>
+
+    <!-- activity_date_choice -->
+    <string name="date_choice_tv_title">날짜선택</string>
+    <string name="date_choice_tv_sub_title">여행 날짜를 선택해주세요</string>
+    <string name="date_choice_tv_no">아직 날짜를 정하지 못했어요</string>
+    <string name="date_choice_tv_yes">날짜 선택하기</string>
+    <string name="date_choice_tv_start_title">출발</string>
+    <string name="data_choice_tv_end_title">도착</string>
+    <string name="date_choice_tv_finish">도착</string>
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
