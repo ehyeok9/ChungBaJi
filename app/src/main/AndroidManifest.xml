@@ -23,7 +23,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -32,7 +31,6 @@
                 android:value="" />
         </activity>
         <activity
-
             android:name=".todo.TodoActivity"
             android:exported="false">
 
@@ -64,11 +62,9 @@
             android:name=".MainActivity"
             android:exported="false">
         </activity>
-
         <activity android:name=".tour_add.country_choice.CountryChoiceActivity" />
         <activity android:name=".tour_add.date_choice.DateChoiceActivity" />
         <activity android:name=".todo.todo_details.TodoDetailsActivity" />
-
 
     </application>
 

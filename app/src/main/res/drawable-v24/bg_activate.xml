@@ -4,7 +4,7 @@
     <item>
         <shape>
             <solid
-                android:color="@color/orange"
+                android:color="@color/mainColor"
                 />
             <corners
                 android:radius="12dp"

@@ -1,30 +1,35 @@
 package com.example.temp.Recommend
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
+import android.view.View
+import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.example.temp.R
+import com.example.temp.databinding.FragmentRecommendBinding
 import com.example.temp.databinding.RecommendBinding
 
+class RecommendFragment : Fragment() {
 
-class Recommend : AppCompatActivity() {
-    private lateinit var binding: RecommendBinding
-    private val MIN_SCALE = 0.85f // 뷰가 몇퍼센트로 줄어들 것인지
-    private val MIN_ALPHA = 0.5f // 어두워지는 정도를 나타낸 듯 하다.
+    private lateinit var binding: FragmentRecommendBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // 뷰 바인딩
         super.onCreate(savedInstanceState)
-        binding = RecommendBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        var rootView = inflater.inflate(R.layout.fragment_recommend, container, false)
+        binding = FragmentRecommendBinding.inflate(layoutInflater)
 
         // 툴 바
         val toolbar = binding.RecommendToolbar
-        setSupportActionBar(toolbar)
-        val ab = supportActionBar!!
-        ab.setDisplayShowTitleEnabled(false)
-        ab.setDisplayHomeAsUpEnabled(true)
+//        setSupportActionBar(toolbar)
+//        val ab = supportActionBar!!
+//        ab.setDisplayShowTitleEnabled(false)
+//        ab.setDisplayHomeAsUpEnabled(true)
 
 
         // 뷰 페이저
@@ -33,26 +38,26 @@ class Recommend : AppCompatActivity() {
         val screenWidth = resources.displayMetrics.widthPixels // 스마트폰의 너비 길이를 가져옴
         val offsetPx = screenWidth - pageMarginPx - pagerWidth
 
-        val viewPager_pic = binding.viewPagerPic
+        val viewPager_pic = rootView.findViewById<ViewPager2>(R.id.viewPager_pic)
         viewPager_pic.offscreenPageLimit = 1
         viewPager_pic.adapter = RecommendViewPagerAdapter(getPicList())
         viewPager_pic.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         viewPager_pic.setPageTransformer { page, position ->
             page.translationX = position * -offsetPx
         }
-
+        return rootView
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-        when (id) {
-            android.R.id.home -> {
-                finish()
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        val id = item.itemId
+//        when (id) {
+//            android.R.id.home -> {
+//                finish()
+//                return true
+//            }
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
 
     private fun getPicList() : ArrayList<ViewPagerData> {
         val itemList = arrayListOf<ViewPagerData>(

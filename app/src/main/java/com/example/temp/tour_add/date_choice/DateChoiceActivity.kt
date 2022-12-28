@@ -3,29 +3,19 @@ package com.example.temp.tour_add.date_choice
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.temp.MainActivity
 import com.example.temp.R
 import com.example.temp.databinding.ActivityDateChoiceBinding
-import com.example.temp.tour_add.date_choice.models.request.TourAddRequest
-import com.example.temp.tour_add.date_choice.models.response.TourAddResponse
-import com.example.temp.tour_add.date_choice.network.DateChoiceActivityInterface
-import com.example.temp.tour_add.date_choice.network.DateChoiceService
 import java.util.*
 
 
-class DateChoiceActivity:AppCompatActivity(),DateChoiceActivityInterface {
-    private val TAG="DateChoiceActivityTAG"
+class DateChoiceActivity:AppCompatActivity() {
     private lateinit var binding: ActivityDateChoiceBinding
     private var receiveIntent: Intent?=null
     private var country:String=""
     private var isFinish=false
-
-    private var startDate=""
-    private var endDate=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDateChoiceBinding.inflate(layoutInflater); // 1
@@ -86,12 +76,6 @@ class DateChoiceActivity:AppCompatActivity(),DateChoiceActivityInterface {
             checkFinish()
             binding.dateChoiceLayoutMain.visibility=View.VISIBLE
         }
-
-        binding.dateChoiceTvFinish.setOnClickListener {
-            if(isFinish){
-                DateChoiceService(this).tryPostTourAdd(TourAddRequest(country,binding.dateChoiceTvStartMain.text.toString(),binding.dateChoiceTvEndMain.text.toString()))
-            }
-        }
     }
 
 
@@ -116,19 +100,6 @@ class DateChoiceActivity:AppCompatActivity(),DateChoiceActivityInterface {
         }else{
             setDisable(binding.dateChoiceTvFinish)
         }
-    }
-
-    override fun onPostTourAddSuccess(response: TourAddResponse) {
-        Log.d(TAG,response.toString())
-
-        var intent=Intent(this,MainActivity::class.java)
-        intent.flags =
-            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP //액티비티 스택제거
-        startActivity(intent)
-    }
-
-    override fun onPostTourAddFailure(code: Int, message: String) {
-        Log.d(TAG,"[onPostTourAddFailure] : $code , $message")
     }
 
 
