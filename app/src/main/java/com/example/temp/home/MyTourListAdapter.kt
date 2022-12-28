@@ -20,7 +20,7 @@ class MyTourListAdapter(val context: Context, private val myTourListArray: Array
         val currentItem = myTourListArray[position]
 
         holder.binding.country.text = currentItem.country
-        holder.binding.date.text = currentItem.date
+        holder.binding.date.text = currentItem.sDate+"~"+currentItem.eDate
     }
     class ListViewHolder(val binding: ItemTourCardBinding) : RecyclerView.ViewHolder(binding.root)
 }
