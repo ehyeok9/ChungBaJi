@@ -18,6 +18,13 @@ class TodoActivity : AppCompatActivity(),TodoActivityInterface {
     lateinit var todoPackFragment: TodoPackFragment
 
     lateinit var binding: ActivityTodoBinding
+
+    private var receiveIntent: Intent?=null
+    private var country:String="일본"
+    private var startDate:String="2022.12.29"
+    private var endDate:String="2022.12.30"
+    private var remainDay:String="D-1"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_todo)
@@ -27,6 +34,30 @@ class TodoActivity : AppCompatActivity(),TodoActivityInterface {
 
         supportFragmentManager.beginTransaction().add(R.id.frameLayout,todoPackFragment).commit()
         supportFragmentManager.beginTransaction().add(R.id.frameLayout,todoDocFragment).commit()
+
+
+
+        receiveIntent=intent
+        if(receiveIntent!=null){
+            if(!receiveIntent?.getStringExtra("clickMyList").isNullOrEmpty()){
+                country=receiveIntent?.getStringExtra("clickMyList").toString()
+                binding.country.text=country
+            }
+
+            if(!receiveIntent?.getStringExtra("startDate").isNullOrEmpty()){
+                startDate=receiveIntent?.getStringExtra("startDate").toString()
+            }
+
+            if(!receiveIntent?.getStringExtra("endDate").isNullOrEmpty()){
+                endDate=receiveIntent?.getStringExtra("endDate").toString()
+            }
+
+            if(!receiveIntent?.getStringExtra("remain").isNullOrEmpty()){
+                remainDay=receiveIntent?.getStringExtra("remain").toString()
+                binding.dday.text=remainDay
+            }
+
+        }
 
         replaceView(todoDocFragment)
 
@@ -49,6 +80,10 @@ class TodoActivity : AppCompatActivity(),TodoActivityInterface {
             }
 
         })
+
+        binding.todoImgBack.setOnClickListener {
+            finish()
+        }
 
 
 
