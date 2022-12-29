@@ -1,17 +1,16 @@
 package com.example.temp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.SingleRequest
+import androidx.appcompat.app.AppCompatActivity
 import com.example.temp.databinding.ActivityRecomListBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.jsoup.Jsoup
 import org.jsoup.select.Elements
+import java.util.*
 
 
 class RecomListActivity : AppCompatActivity() {
@@ -63,9 +62,23 @@ class RecomListActivity : AppCompatActivity() {
 
                 var item = checkboxData(img, spot, detail)
                 itemList.add(item)
+
+
+                val test: TimerTask = object : TimerTask() {
+                    override fun run() {
+                        runOnUiThread {
+                            recomListAdapter.notifyDataSetChanged()
+
+                        }
+                    }
+                }
+                test.run()
+
             }
             Log.d("test", "생성완료")
+
         }
+
 
         return itemList
     }
