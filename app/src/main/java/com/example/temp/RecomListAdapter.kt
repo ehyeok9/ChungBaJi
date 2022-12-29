@@ -23,7 +23,9 @@ class RecomListAdapter (private val data: ArrayList<checkboxData>) : RecyclerVie
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val country : CheckBox = itemView.findViewById(R.id.country)
         fun bind(item: checkboxData) {
-            country.text = item.title
+            binding.imageView.clipToOutline=true
+            binding.spot.text = item.title
+            binding.comment.text = item.comment
 
         }
     }

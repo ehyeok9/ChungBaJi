@@ -66,6 +66,9 @@
         <activity android:name=".tour_add.date_choice.DateChoiceActivity" />
         <activity android:name=".todo.todo_details.TodoDetailsActivity" />
 
+        <activity android:name=".RecomListActivity"/>
+
+
     </application>
 
 </manifest>

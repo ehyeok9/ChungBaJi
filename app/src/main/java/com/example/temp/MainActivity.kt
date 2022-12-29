@@ -10,7 +10,6 @@ import com.example.temp.home.FragmentHome
 
 import com.example.temp.history.HistoryFragment
 
-import com.example.temp.temp.Temp2Fragment
 import com.example.temp.temp.TempFragment
 import com.kakao.sdk.common.util.Utility
 
