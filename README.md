@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <center><img src="https://github.com/ehyeok9/ChungBaJi/blob/master/app/src/main/res/drawable/title.png" width="300" height="300"></center>
+  <center><img src="https://github.com/ehyeok9/ChungBaJi/blob/master/app/src/main/res/drawable/title.png" width="150" height="100"></center>
   <br>
   <br>
 </h1>
@@ -37,7 +37,7 @@
 
 
 ## Demonstration Video
-![](https://github.com/ehyeok9/ChungBaJi/blob/master/app_test_test.mp4)
+<a>https://github.com/ehyeok9/ChungBaJi/blob/master/app_test_test.mp4</a>
 
 ## Co-Work
 
