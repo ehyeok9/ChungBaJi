@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  ![title](https://github.com/ehyeok9/ChungBaJi/blob/master/app/src/main/res/drawable/title.png){: width="100" height="100"}
+  <center><img src="https://github.com/ehyeok9/ChungBaJi/blob/master/app/src/main/res/drawable/title.png" width="300" height="300"></center>
   <br>
   <br>
 </h1>
