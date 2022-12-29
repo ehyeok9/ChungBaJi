@@ -12,10 +12,10 @@
 
 ## Application Key Features
 
-✔️ 계획 중인 여행 추가   
-✔️ 필요 서류 체크 리스트  
-✔️ 나라 별 여행지 추천  
-✔️ 나의 여행 기록
+- 계획 중인 여행 추가   
+- 필요 서류 체크 리스트  
+- 나라 별 여행지 추천  
+- 나의 여행 기록
 
 
 ## Tech Stack
@@ -37,35 +37,33 @@
 
 
 ## Demonstration Video
-
-
-https://drive.google.com/file/d/12q1RuYeiJ3ZXs2tYfkeZtz1EbbN3Dmq2/view?usp=share_link
-
+![](https://drive.google.com/file/d/12sgoWJFZAQnwV9FFlDS-YuHTDputN-7J/view?usp=share_link)
 
 ## Co-Work
 
 #### ✔️ Github
 - Github Flow 적극 활용
-- 지속적인 commit으로 프로잭트 관리
 - 코드 리뷰 및 프로젝트 점검
 
+#### ✔️ Figma
+- UI 구상 및 디자인
+- Work Flow 구성
+
 #### ✔️ Discord
-- 매주 회의 후 작업 현황 공유
 - 공지사항, 기획, 문제 해결 관련 자료 공유
 - 프로젝트 개발 관련 피드백
 
 #### ✔️ Notion
-- 프로젝트 스터디 (Kotlin 문법, Android Architecture)
-- 프로젝트 일정 공유 
-![Time Table](https://drive.google.com/file/d/12sgoWJFZAQnwV9FFlDS-YuHTDputN-7J/view?usp=share_link)
+- 아이디어 기획
+- 프로젝트 일정 관리 
 
 ## Contributer
 
-- [[팀장] 김도엽](https://github.com/DYGames)
-- [[팀원] 김채환](https://github.com/chkim417)
-- [[팀원] 김한림](https://github.com/gksfla8947)
+- [[팀장] 안채연](https://github.com/ancy0)
+- [[팀원] 유정현](https://github.com/OliviaYJH)
+- [[팀원] 장나라](https://github.com/skfl0282)
 - [[팀원] 이혁규](https://github.com/ehyeok9)
-- [[팀원] 채주원](https://github.com/ChaeJoowon)
+- [[팀원] 김민중](https://github.com/kmj-99)
   
 
 ## How to Run?
