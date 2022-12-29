@@ -6,21 +6,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home.FragmentHome">
 
-    <TextView
-        android:id="@+id/appTitle"
+    <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="62dp"
-        android:gravity="center"
+        android:layout_height="80dp"
+        android:paddingVertical="15dp"
+        android:paddingLeft="15dp"
+        android:src="@drawable/title"
+            android:background="@color/white"
+            app:itemBackground="@color/white"
+    />
 
-        android:paddingVertical="10dp"
+<!--    <TextView-->
+<!--        android:id="@+id/appTitle"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="62dp"-->
+<!--        android:gravity="center"-->
 
-        android:background="@color/white"
-        app:itemBackground="@color/white"
+<!--        android:paddingVertical="10dp"-->
 
-        android:text="청바지"
-        android:textColor="@color/black"
-        android:textSize="24dp"
-        android:textStyle="bold" />
+<!--        android:background="@color/white"-->
+<!--        app:itemBackground="@color/white"-->
+
+<!--        android:text="청바지"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="24dp"-->
+<!--        android:textStyle="bold" />-->
 
 
     <LinearLayout
@@ -35,8 +46,8 @@
             android:id="@+id/viewFlipper"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="60dp"
             >
 
             <TextView
@@ -115,7 +126,8 @@
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="5"
                     android:scaleType="centerCrop"
                     android:src="@drawable/trip"
                     />
@@ -123,19 +135,19 @@
                 <TextView
                     android:id="@+id/ifNullText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
                     android:gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
                     android:text="아직 준비 중인 여행이 없어요\n저희가 추천해드릴게요!"
-                    android:textSize="18dp"
+                    android:textSize="19dp"
                     android:textColor="@color/black"
-                    android:lineSpacingExtra="3dp"/>
+                    android:lineSpacingExtra="4dp"/>
 
                 <ImageView
                     android:id="@+id/imageView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="20dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
                     android:layout_gravity="center"
                     android:src="@drawable/recommend_arrow" />
             </LinearLayout>
