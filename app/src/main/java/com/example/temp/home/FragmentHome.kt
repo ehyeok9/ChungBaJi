@@ -52,7 +52,7 @@ class FragmentHome : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(layoutInflater)
-        binding.viewFlipper.flipInterval = 3000  //화면 넘김 간격 메서드 (millisceond)
+        binding.viewFlipper.flipInterval = 4000  //화면 넘김 간격 메서드 (millisceond)
         binding.viewFlipper.startFlipping()
 
 //        getTravelHistoryData()
