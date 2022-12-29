@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <img src="https://github.com/ehyeok9/ChungBaJi/blob/master/app/src/main/res/drawable/title.png"></a>
+  ![title](https://github.com/ehyeok9/ChungBaJi/blob/master/app/src/main/res/drawable/title.png){: width="100" height="100"}
   <br>
   <br>
 </h1>
@@ -20,7 +20,7 @@
 
 ## Tech Stack
 
-✔️ Client
+#### ✔️ Client
 - Kotlin : ViewBinding, Kotlin Coroutine 적극 활용  
 - MVP Pattern : 
 - Glide : 이미지 관리  
@@ -29,7 +29,7 @@
 - 카카오 이미지 검색
 - 네이버 여행 페이지 크롤링
 
-✔️ Server
+#### ✔️ Server
 - Spring Boot : REST API 서버 개발
 - MySQL : Database 관리
 - Open API : 파일 관리
@@ -37,7 +37,7 @@
 
 
 ## Demonstration Video
-https://drive.google.com/file/d/12sgoWJFZAQnwV9FFlDS-YuHTDputN-7J/view?usp=share_link
+![](https://github.com/ehyeok9/ChungBaJi/blob/master/app_test_test.mp4)
 
 ## Co-Work
 
