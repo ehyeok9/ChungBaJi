@@ -37,7 +37,7 @@
 
 
 ## Demonstration Video
-<a>https://github.com/ehyeok9/ChungBaJi/blob/master/app_test_test.mp4</a>
+<a>https://drive.google.com/file/d/12sgoWJFZAQnwV9FFlDS-YuHTDputN-7J/view?usp=share_link</a>
 
 ## Co-Work
 
