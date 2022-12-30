@@ -37,7 +37,7 @@
 
 
 ## Demonstration Video
-<img src="https://github.com/ehyeok9/ChungBaJi/blob/master/Chungbaji.Video.gif" width="50%" height="50%">
+<img src="https://github.com/ehyeok9/ChungBaJi/blob/master/Chungbaji.Video.gif" width="25%" height="25%">
 
 ## Co-Work
 
