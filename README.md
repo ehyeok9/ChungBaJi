@@ -26,8 +26,6 @@
 - Glide : 이미지 관리  
 - OkHTTP : HTTP 통신  
 - Material Design
-- 카카오 이미지 검색
-- 네이버 여행 페이지 크롤링
 
 #### ✔️ Server
 - Spring Boot : REST API 서버 개발
