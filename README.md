@@ -22,7 +22,7 @@
 
 #### ✔️ Client
 - Kotlin : ViewBinding, Kotlin Coroutine 적극 활용  
-- MVP Pattern : 
+- MVP Pattern
 - Glide : 이미지 관리  
 - OkHTTP : HTTP 통신  
 - Material Design
@@ -37,8 +37,7 @@
 
 
 ## Demonstration Video
-![](https://github.com/ehyeok9/ChungBaJi/blob/master/Chungbaji.Video.gif)
-<a>https://drive.google.com/file/d/12q1RuYeiJ3ZXs2tYfkeZtz1EbbN3Dmq2/view?usp=share_link</a>
+<img src="https://github.com/ehyeok9/ChungBaJi/blob/master/Chungbaji.Video.gif" width="50%" height="50%">
 
 ## Co-Work
 
