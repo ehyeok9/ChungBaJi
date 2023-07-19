@@ -57,7 +57,7 @@
 
 ## Contributer
 
-- [[팀장] 안채연](https://github.com/ancy0)
+- [[팀장] 안채영](https://github.com/ancy0)
 - [[팀원] 유정현](https://github.com/OliviaYJH)
 - [[팀원] 장나리](https://github.com/skfl0282)
 - [[팀원] 이혁규](https://github.com/ehyeok9)
